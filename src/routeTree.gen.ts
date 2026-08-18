@@ -16,6 +16,10 @@ import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as BookIndexRouteImport } from './routes/book.index'
+import { Route as BookServiceIdRouteImport } from './routes/book.$serviceId'
+import { Route as SectorSectorIdRouteImport } from './routes/sector.$sectorId'
+import { Route as TokenTokenIdRouteImport } from './routes/token.$tokenId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +56,26 @@ const SignupRoute = SignupRouteImport.update({
   path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookIndexRoute = BookIndexRouteImport.update({
+  id: '/book/',
+  path: '/book/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookServiceIdRoute = BookServiceIdRouteImport.update({
+  id: '/book/$serviceId',
+  path: '/book/$serviceId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SectorSectorIdRoute = SectorSectorIdRouteImport.update({
+  id: '/sector/$sectorId',
+  path: '/sector/$sectorId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TokenTokenIdRoute = TokenTokenIdRouteImport.update({
+  id: '/token/$tokenId',
+  path: '/token/$tokenId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +85,10 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
+  '/book/$serviceId': typeof BookServiceIdRoute
+  '/sector/$sectorId': typeof SectorSectorIdRoute
+  '/token/$tokenId': typeof TokenTokenIdRoute
+  '/book/': typeof BookIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +98,10 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
+  '/book/$serviceId': typeof BookServiceIdRoute
+  '/sector/$sectorId': typeof SectorSectorIdRoute
+  '/token/$tokenId': typeof TokenTokenIdRoute
+  '/book': typeof BookIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +112,10 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
+  '/book/$serviceId': typeof BookServiceIdRoute
+  '/sector/$sectorId': typeof SectorSectorIdRoute
+  '/token/$tokenId': typeof TokenTokenIdRoute
+  '/book/': typeof BookIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +127,10 @@ export interface FileRouteTypes {
     | '/login'
     | '/services'
     | '/signup'
+    | '/book/$serviceId'
+    | '/sector/$sectorId'
+    | '/token/$tokenId'
+    | '/book/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +140,10 @@ export interface FileRouteTypes {
     | '/login'
     | '/services'
     | '/signup'
+    | '/book/$serviceId'
+    | '/sector/$sectorId'
+    | '/token/$tokenId'
+    | '/book'
   id:
     | '__root__'
     | '/'
@@ -109,6 +153,10 @@ export interface FileRouteTypes {
     | '/login'
     | '/services'
     | '/signup'
+    | '/book/$serviceId'
+    | '/sector/$sectorId'
+    | '/token/$tokenId'
+    | '/book/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +167,10 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   ServicesRoute: typeof ServicesRoute
   SignupRoute: typeof SignupRoute
+  BookServiceIdRoute: typeof BookServiceIdRoute
+  SectorSectorIdRoute: typeof SectorSectorIdRoute
+  TokenTokenIdRoute: typeof TokenTokenIdRoute
+  BookIndexRoute: typeof BookIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +224,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book/': {
+      id: '/book/'
+      path: '/book'
+      fullPath: '/book/'
+      preLoaderRoute: typeof BookIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book/$serviceId': {
+      id: '/book/$serviceId'
+      path: '/book/$serviceId'
+      fullPath: '/book/$serviceId'
+      preLoaderRoute: typeof BookServiceIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sector/$sectorId': {
+      id: '/sector/$sectorId'
+      path: '/sector/$sectorId'
+      fullPath: '/sector/$sectorId'
+      preLoaderRoute: typeof SectorSectorIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/token/$tokenId': {
+      id: '/token/$tokenId'
+      path: '/token/$tokenId'
+      fullPath: '/token/$tokenId'
+      preLoaderRoute: typeof TokenTokenIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +263,10 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   ServicesRoute: ServicesRoute,
   SignupRoute: SignupRoute,
+  BookServiceIdRoute: BookServiceIdRoute,
+  SectorSectorIdRoute: SectorSectorIdRoute,
+  TokenTokenIdRoute: TokenTokenIdRoute,
+  BookIndexRoute: BookIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
