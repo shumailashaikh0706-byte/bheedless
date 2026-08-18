@@ -93,8 +93,8 @@ function SignupPage() {
       role: "user",
       createdAt: new Date().toISOString(),
       accessibility,
-      guardianName: form.guardianName || undefined,
-      guardianPhone: form.guardianPhone || undefined,
+      ...(form.guardianName ? { guardianName: form.guardianName } : {}),
+      ...(form.guardianPhone ? { guardianPhone: form.guardianPhone } : {}),
       verified: true,
       noShowStrikes: 0,
     });

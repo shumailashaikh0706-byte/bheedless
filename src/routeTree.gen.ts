@@ -11,9 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AppointmentsRouteImport } from './routes/appointments'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as PriorityRouteImport } from './routes/priority'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as BookIndexRouteImport } from './routes/book.index'
@@ -31,6 +35,11 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppointmentsRoute = AppointmentsRouteImport.update({
+  id: '/appointments',
+  path: '/appointments',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -44,6 +53,21 @@ const HowItWorksRoute = HowItWorksRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PriorityRoute = PriorityRouteImport.update({
+  id: '/priority',
+  path: '/priority',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -80,9 +104,13 @@ const TokenTokenIdRoute = TokenTokenIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/appointments': typeof AppointmentsRoute
   '/dashboard': typeof DashboardRoute
   '/how-it-works': typeof HowItWorksRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/priority': typeof PriorityRoute
+  '/profile': typeof ProfileRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
   '/book/$serviceId': typeof BookServiceIdRoute
@@ -93,9 +121,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/appointments': typeof AppointmentsRoute
   '/dashboard': typeof DashboardRoute
   '/how-it-works': typeof HowItWorksRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/priority': typeof PriorityRoute
+  '/profile': typeof ProfileRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
   '/book/$serviceId': typeof BookServiceIdRoute
@@ -107,9 +139,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/appointments': typeof AppointmentsRoute
   '/dashboard': typeof DashboardRoute
   '/how-it-works': typeof HowItWorksRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/priority': typeof PriorityRoute
+  '/profile': typeof ProfileRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
   '/book/$serviceId': typeof BookServiceIdRoute
@@ -122,9 +158,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/appointments'
     | '/dashboard'
     | '/how-it-works'
     | '/login'
+    | '/notifications'
+    | '/priority'
+    | '/profile'
     | '/services'
     | '/signup'
     | '/book/$serviceId'
@@ -135,9 +175,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/appointments'
     | '/dashboard'
     | '/how-it-works'
     | '/login'
+    | '/notifications'
+    | '/priority'
+    | '/profile'
     | '/services'
     | '/signup'
     | '/book/$serviceId'
@@ -148,9 +192,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/appointments'
     | '/dashboard'
     | '/how-it-works'
     | '/login'
+    | '/notifications'
+    | '/priority'
+    | '/profile'
     | '/services'
     | '/signup'
     | '/book/$serviceId'
@@ -162,9 +210,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AppointmentsRoute: typeof AppointmentsRoute
   DashboardRoute: typeof DashboardRoute
   HowItWorksRoute: typeof HowItWorksRoute
   LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
+  PriorityRoute: typeof PriorityRoute
+  ProfileRoute: typeof ProfileRoute
   ServicesRoute: typeof ServicesRoute
   SignupRoute: typeof SignupRoute
   BookServiceIdRoute: typeof BookServiceIdRoute
@@ -189,6 +241,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/appointments': {
+      id: '/appointments'
+      path: '/appointments'
+      fullPath: '/appointments'
+      preLoaderRoute: typeof AppointmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -208,6 +267,27 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/priority': {
+      id: '/priority'
+      path: '/priority'
+      fullPath: '/priority'
+      preLoaderRoute: typeof PriorityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -258,9 +338,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AppointmentsRoute: AppointmentsRoute,
   DashboardRoute: DashboardRoute,
   HowItWorksRoute: HowItWorksRoute,
   LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
+  PriorityRoute: PriorityRoute,
+  ProfileRoute: ProfileRoute,
   ServicesRoute: ServicesRoute,
   SignupRoute: SignupRoute,
   BookServiceIdRoute: BookServiceIdRoute,
