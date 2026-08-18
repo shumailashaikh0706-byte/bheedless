@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AppointmentsRouteImport } from './routes/appointments'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
@@ -20,6 +21,7 @@ import { Route as PriorityRouteImport } from './routes/priority'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as StaffRouteImport } from './routes/staff'
 import { Route as BookIndexRouteImport } from './routes/book.index'
 import { Route as BookServiceIdRouteImport } from './routes/book.$serviceId'
 import { Route as SectorSectorIdRouteImport } from './routes/sector.$sectorId'
@@ -33,6 +35,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppointmentsRoute = AppointmentsRouteImport.update({
@@ -80,6 +87,11 @@ const SignupRoute = SignupRouteImport.update({
   path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StaffRoute = StaffRouteImport.update({
+  id: '/staff',
+  path: '/staff',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BookIndexRoute = BookIndexRouteImport.update({
   id: '/book/',
   path: '/book/',
@@ -104,6 +116,7 @@ const TokenTokenIdRoute = TokenTokenIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/appointments': typeof AppointmentsRoute
   '/dashboard': typeof DashboardRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -113,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/profile': typeof ProfileRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
+  '/staff': typeof StaffRoute
   '/book/$serviceId': typeof BookServiceIdRoute
   '/sector/$sectorId': typeof SectorSectorIdRoute
   '/token/$tokenId': typeof TokenTokenIdRoute
@@ -121,6 +135,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/appointments': typeof AppointmentsRoute
   '/dashboard': typeof DashboardRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -130,6 +145,7 @@ export interface FileRoutesByTo {
   '/profile': typeof ProfileRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
+  '/staff': typeof StaffRoute
   '/book/$serviceId': typeof BookServiceIdRoute
   '/sector/$sectorId': typeof SectorSectorIdRoute
   '/token/$tokenId': typeof TokenTokenIdRoute
@@ -139,6 +155,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/appointments': typeof AppointmentsRoute
   '/dashboard': typeof DashboardRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -148,6 +165,7 @@ export interface FileRoutesById {
   '/profile': typeof ProfileRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
+  '/staff': typeof StaffRoute
   '/book/$serviceId': typeof BookServiceIdRoute
   '/sector/$sectorId': typeof SectorSectorIdRoute
   '/token/$tokenId': typeof TokenTokenIdRoute
@@ -158,6 +176,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
     | '/appointments'
     | '/dashboard'
     | '/how-it-works'
@@ -167,6 +186,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/services'
     | '/signup'
+    | '/staff'
     | '/book/$serviceId'
     | '/sector/$sectorId'
     | '/token/$tokenId'
@@ -175,6 +195,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/admin'
     | '/appointments'
     | '/dashboard'
     | '/how-it-works'
@@ -184,6 +205,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/services'
     | '/signup'
+    | '/staff'
     | '/book/$serviceId'
     | '/sector/$sectorId'
     | '/token/$tokenId'
@@ -192,6 +214,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/admin'
     | '/appointments'
     | '/dashboard'
     | '/how-it-works'
@@ -201,6 +224,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/services'
     | '/signup'
+    | '/staff'
     | '/book/$serviceId'
     | '/sector/$sectorId'
     | '/token/$tokenId'
@@ -210,6 +234,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
   AppointmentsRoute: typeof AppointmentsRoute
   DashboardRoute: typeof DashboardRoute
   HowItWorksRoute: typeof HowItWorksRoute
@@ -219,6 +244,7 @@ export interface RootRouteChildren {
   ProfileRoute: typeof ProfileRoute
   ServicesRoute: typeof ServicesRoute
   SignupRoute: typeof SignupRoute
+  StaffRoute: typeof StaffRoute
   BookServiceIdRoute: typeof BookServiceIdRoute
   SectorSectorIdRoute: typeof SectorSectorIdRoute
   TokenTokenIdRoute: typeof TokenTokenIdRoute
@@ -239,6 +265,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/appointments': {
@@ -304,6 +337,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/staff': {
+      id: '/staff'
+      path: '/staff'
+      fullPath: '/staff'
+      preLoaderRoute: typeof StaffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/book/': {
       id: '/book/'
       path: '/book'
@@ -338,6 +378,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
   AppointmentsRoute: AppointmentsRoute,
   DashboardRoute: DashboardRoute,
   HowItWorksRoute: HowItWorksRoute,
@@ -347,6 +388,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProfileRoute: ProfileRoute,
   ServicesRoute: ServicesRoute,
   SignupRoute: SignupRoute,
+  StaffRoute: StaffRoute,
   BookServiceIdRoute: BookServiceIdRoute,
   SectorSectorIdRoute: SectorSectorIdRoute,
   TokenTokenIdRoute: TokenTokenIdRoute,
