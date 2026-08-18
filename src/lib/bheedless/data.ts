@@ -202,7 +202,7 @@ export const sectorAnalytics: Record<
       { label: "Peak consultation hours", value: "11 AM – 1 PM" },
       { label: "Avg. service duration", value: "4.2 min" },
     ],
-    waitLine: [14, 16, 18, 27, 24, 19, 17, 15, 12].map((wait, i) => ({ hour: HOURS[i], wait })),
+    waitLine: [14, 16, 18, 27, 24, 19, 17, 15, 12].map((wait, i) => ({ hour: HOURS[i] as string, wait })),
     visitorsBar: [
       { day: "Mon", visitors: 480 },
       { day: "Tue", visitors: 520 },
@@ -229,7 +229,7 @@ export const sectorAnalytics: Record<
       { label: "Peak banking hours", value: "12 PM – 2 PM" },
       { label: "Counter utilisation", value: "78%" },
     ],
-    waitLine: [8, 11, 14, 19, 21, 16, 12, 10, 7].map((wait, i) => ({ hour: HOURS[i], wait })),
+    waitLine: [8, 11, 14, 19, 21, 16, 12, 10, 7].map((wait, i) => ({ hour: HOURS[i] as string, wait })),
     visitorsBar: [
       { day: "Mon", visitors: 390 },
       { day: "Tue", visitors: 340 },
@@ -256,7 +256,7 @@ export const sectorAnalytics: Record<
       { label: "Peak visitor hours", value: "10 AM – 11 AM" },
       { label: "HR / IT / Admin split", value: "34 / 41 / 25" },
     ],
-    waitLine: [7, 12, 9, 8, 11, 9, 6, 5, 4].map((wait, i) => ({ hour: HOURS[i], wait })),
+    waitLine: [7, 12, 9, 8, 11, 9, 6, 5, 4].map((wait, i) => ({ hour: HOURS[i] as string, wait })),
     visitorsBar: [
       { day: "Mon", visitors: 210 },
       { day: "Tue", visitors: 185 },
@@ -281,7 +281,7 @@ export const sectorAnalytics: Record<
       { label: "Examination traffic", value: "1,890 students" },
       { label: "Peak student hours", value: "11 AM – 2 PM" },
     ],
-    waitLine: [10, 14, 17, 22, 20, 15, 13, 11, 8].map((wait, i) => ({ hour: HOURS[i], wait })),
+    waitLine: [10, 14, 17, 22, 20, 15, 13, 11, 8].map((wait, i) => ({ hour: HOURS[i] as string, wait })),
     visitorsBar: [
       { day: "Mon", visitors: 420 },
       { day: "Tue", visitors: 390 },
@@ -308,7 +308,7 @@ export const sectorAnalytics: Record<
       { label: "Appointment utilisation", value: "91%" },
       { label: "Avg. processing time", value: "9.5 min" },
     ],
-    waitLine: [9, 11, 14, 18, 16, 13, 11, 9, 7].map((wait, i) => ({ hour: HOURS[i], wait })),
+    waitLine: [9, 11, 14, 18, 16, 13, 11, 9, 7].map((wait, i) => ({ hour: HOURS[i] as string, wait })),
     visitorsBar: [
       { day: "Mon", visitors: 330 },
       { day: "Tue", visitors: 315 },
