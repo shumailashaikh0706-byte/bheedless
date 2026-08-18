@@ -186,7 +186,7 @@ function SectorPage() {
                       borderRadius: 12,
                     }}
                   />
-                  <Bar dataKey="visitors" fill="var(--accent-neon)" radius={[6, 6, 0, 0]} />
+                  <Bar dataKey="visitors" fill="var(--accent)" radius={[6, 6, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>

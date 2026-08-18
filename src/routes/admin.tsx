@@ -48,7 +48,7 @@ export const Route = createFileRoute("/admin")({
   ),
 });
 
-const PIE_COLORS = ["var(--primary)", "var(--accent-neon)", "var(--success)", "var(--warning)", "var(--critical)"];
+const PIE_COLORS = ["var(--primary)", "var(--accent)", "var(--success)", "var(--warning)", "var(--critical)"];
 
 function AdminPage() {
   const {
@@ -292,7 +292,7 @@ function AdminPage() {
                           borderRadius: 12,
                         }}
                       />
-                      <Bar dataKey="visitors" fill="var(--accent-neon)" radius={[6, 6, 0, 0]} />
+                      <Bar dataKey="visitors" fill="var(--accent)" radius={[6, 6, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
