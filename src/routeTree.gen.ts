@@ -10,33 +10,245 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AppointmentsRouteImport } from './routes/appointments'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as PriorityRouteImport } from './routes/priority'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as StaffRouteImport } from './routes/staff'
+import { Route as BookIndexRouteImport } from './routes/book.index'
+import { Route as BookServiceIdRouteImport } from './routes/book.$serviceId'
+import { Route as SectorSectorIdRouteImport } from './routes/sector.$sectorId'
+import { Route as TokenTokenIdRouteImport } from './routes/token.$tokenId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppointmentsRoute = AppointmentsRouteImport.update({
+  id: '/appointments',
+  path: '/appointments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PriorityRoute = PriorityRouteImport.update({
+  id: '/priority',
+  path: '/priority',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StaffRoute = StaffRouteImport.update({
+  id: '/staff',
+  path: '/staff',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookIndexRoute = BookIndexRouteImport.update({
+  id: '/book/',
+  path: '/book/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookServiceIdRoute = BookServiceIdRouteImport.update({
+  id: '/book/$serviceId',
+  path: '/book/$serviceId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SectorSectorIdRoute = SectorSectorIdRouteImport.update({
+  id: '/sector/$sectorId',
+  path: '/sector/$sectorId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TokenTokenIdRoute = TokenTokenIdRouteImport.update({
+  id: '/token/$tokenId',
+  path: '/token/$tokenId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/appointments': typeof AppointmentsRoute
+  '/dashboard': typeof DashboardRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/priority': typeof PriorityRoute
+  '/profile': typeof ProfileRoute
+  '/services': typeof ServicesRoute
+  '/signup': typeof SignupRoute
+  '/staff': typeof StaffRoute
+  '/book/$serviceId': typeof BookServiceIdRoute
+  '/sector/$sectorId': typeof SectorSectorIdRoute
+  '/token/$tokenId': typeof TokenTokenIdRoute
+  '/book/': typeof BookIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/appointments': typeof AppointmentsRoute
+  '/dashboard': typeof DashboardRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/priority': typeof PriorityRoute
+  '/profile': typeof ProfileRoute
+  '/services': typeof ServicesRoute
+  '/signup': typeof SignupRoute
+  '/staff': typeof StaffRoute
+  '/book/$serviceId': typeof BookServiceIdRoute
+  '/sector/$sectorId': typeof SectorSectorIdRoute
+  '/token/$tokenId': typeof TokenTokenIdRoute
+  '/book': typeof BookIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/appointments': typeof AppointmentsRoute
+  '/dashboard': typeof DashboardRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/priority': typeof PriorityRoute
+  '/profile': typeof ProfileRoute
+  '/services': typeof ServicesRoute
+  '/signup': typeof SignupRoute
+  '/staff': typeof StaffRoute
+  '/book/$serviceId': typeof BookServiceIdRoute
+  '/sector/$sectorId': typeof SectorSectorIdRoute
+  '/token/$tokenId': typeof TokenTokenIdRoute
+  '/book/': typeof BookIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/appointments'
+    | '/dashboard'
+    | '/how-it-works'
+    | '/login'
+    | '/notifications'
+    | '/priority'
+    | '/profile'
+    | '/services'
+    | '/signup'
+    | '/staff'
+    | '/book/$serviceId'
+    | '/sector/$sectorId'
+    | '/token/$tokenId'
+    | '/book/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/appointments'
+    | '/dashboard'
+    | '/how-it-works'
+    | '/login'
+    | '/notifications'
+    | '/priority'
+    | '/profile'
+    | '/services'
+    | '/signup'
+    | '/staff'
+    | '/book/$serviceId'
+    | '/sector/$sectorId'
+    | '/token/$tokenId'
+    | '/book'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/appointments'
+    | '/dashboard'
+    | '/how-it-works'
+    | '/login'
+    | '/notifications'
+    | '/priority'
+    | '/profile'
+    | '/services'
+    | '/signup'
+    | '/staff'
+    | '/book/$serviceId'
+    | '/sector/$sectorId'
+    | '/token/$tokenId'
+    | '/book/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  AppointmentsRoute: typeof AppointmentsRoute
+  DashboardRoute: typeof DashboardRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
+  PriorityRoute: typeof PriorityRoute
+  ProfileRoute: typeof ProfileRoute
+  ServicesRoute: typeof ServicesRoute
+  SignupRoute: typeof SignupRoute
+  StaffRoute: typeof StaffRoute
+  BookServiceIdRoute: typeof BookServiceIdRoute
+  SectorSectorIdRoute: typeof SectorSectorIdRoute
+  TokenTokenIdRoute: typeof TokenTokenIdRoute
+  BookIndexRoute: typeof BookIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +260,139 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/appointments': {
+      id: '/appointments'
+      path: '/appointments'
+      fullPath: '/appointments'
+      preLoaderRoute: typeof AppointmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/priority': {
+      id: '/priority'
+      path: '/priority'
+      fullPath: '/priority'
+      preLoaderRoute: typeof PriorityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/staff': {
+      id: '/staff'
+      path: '/staff'
+      fullPath: '/staff'
+      preLoaderRoute: typeof StaffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book/': {
+      id: '/book/'
+      path: '/book'
+      fullPath: '/book/'
+      preLoaderRoute: typeof BookIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book/$serviceId': {
+      id: '/book/$serviceId'
+      path: '/book/$serviceId'
+      fullPath: '/book/$serviceId'
+      preLoaderRoute: typeof BookServiceIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sector/$sectorId': {
+      id: '/sector/$sectorId'
+      path: '/sector/$sectorId'
+      fullPath: '/sector/$sectorId'
+      preLoaderRoute: typeof SectorSectorIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/token/$tokenId': {
+      id: '/token/$tokenId'
+      path: '/token/$tokenId'
+      fullPath: '/token/$tokenId'
+      preLoaderRoute: typeof TokenTokenIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  AppointmentsRoute: AppointmentsRoute,
+  DashboardRoute: DashboardRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
+  PriorityRoute: PriorityRoute,
+  ProfileRoute: ProfileRoute,
+  ServicesRoute: ServicesRoute,
+  SignupRoute: SignupRoute,
+  StaffRoute: StaffRoute,
+  BookServiceIdRoute: BookServiceIdRoute,
+  SectorSectorIdRoute: SectorSectorIdRoute,
+  TokenTokenIdRoute: TokenTokenIdRoute,
+  BookIndexRoute: BookIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
